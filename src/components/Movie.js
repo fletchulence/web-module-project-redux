@@ -70,3 +70,5 @@ const mapStateToProps = (state)=>{
 }
 
 export default connect(mapStateToProps, { deleteMovie })(Movie);
+
+//! try mapping action to props and then setting deleteMovie as a function of movie.id
