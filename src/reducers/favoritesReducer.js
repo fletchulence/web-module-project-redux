@@ -1,7 +1,7 @@
 
 
 const initialState ={
-   favrites: [],
+   favorites: [],
    displayFavorites: false,
 }
 
