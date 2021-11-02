@@ -18,8 +18,8 @@ const Movie = (props) => {
         push('/movies');
     }
 
-    const handleAddFav = (movie) =>{
-        props.addFav(movie)
+    const handleAddFav = (id) =>{
+        props.addFav(id)
     }
     
     return(<div className="modal-page col">
