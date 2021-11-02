@@ -23,6 +23,7 @@ const AddMovieForm = (props) => {
         });
     }
 
+    //? used DISPATCH in the beginning
     const handleSubmit = (e) => {
         e.preventDefault();
         props.dispatch(addMovie(movie))
@@ -72,9 +73,10 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
+//! still have to mapStateToProps
 const mapStateToProps = (state) =>{
     return{
-        movies: state.movies
+        movies: state.movieState.movies
     }
 }
 
