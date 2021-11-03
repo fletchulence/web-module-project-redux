@@ -8,8 +8,8 @@ import { removeFav } from '../actions/favoriteActions';
 const FavoriteMovieList = (props) => {
     // const favorites = [];
 
-    const handleRemoveFav = (id) =>{
-        props.removeFav(id)
+    const handleRemoveFav = (movie) =>{
+        props.removeFav(movie.id)
     }
     
     return (<div className="col-xs savedContainer">
@@ -36,7 +36,7 @@ const FavoriteMovieList = (props) => {
 const mapStateToProps = (state) =>{
     return({
         favorites: state.favoritesState.favorites,
-        displayFavorites: state.favoritesState.displayFavorites
+        // displayFavorites: state.favoritesState.displayFavorites
     })
 }
 

@@ -9,7 +9,10 @@ import App from './App'
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
+//!using rootReducer here to manage the store -- 
+//?rootReducer will allow us to create a store with changing outputs
 const store = createStore(rootReducer)
+
 
 ReactDOM.render(
   <Router>

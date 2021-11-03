@@ -2,7 +2,7 @@ import { TOGGLE_FAV, ADD_FAV, REMOVE_FAV } from '../actions/favoriteActions';
 
 const initialState ={
    favorites: [],
-   displayFavorites: false,
+   displayFavorites: true,
 }
 
 const favoritesReducer = (state = initialState, action) =>{
@@ -10,7 +10,7 @@ const favoritesReducer = (state = initialState, action) =>{
       case TOGGLE_FAV:
          return{
             ...state,
-            //state.displayFavorites is important
+            //"state".displayFavorites is important
             displayFavorites: !state.displayFavorites
          }
       case ADD_FAV:
@@ -22,7 +22,7 @@ const favoritesReducer = (state = initialState, action) =>{
          }
       case REMOVE_FAV:
          return{
-            favorites: state.favorites.filter(item=>(action.payload !=item))
+            favorites: state.favorites.filter(item=>(action.payload !=item.id))
          }
       default:
          return state;
