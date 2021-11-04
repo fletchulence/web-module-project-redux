@@ -8,6 +8,7 @@ const AddMovieForm = (props) => {
     const { push } = useHistory();
 
     const [movie, setMovie] = useState({
+        id: Date.now(),
         title: "",
         director: "",
         genre: "",
@@ -22,13 +23,18 @@ const AddMovieForm = (props) => {
         });
     }
 
+    //? used DISPATCH in the beginning
     const handleSubmit = (e) => {
+        e.preventDefault();
+        props.dispatch(addMovie(movie))
+        push('/movies/')
     }
 
     const { title, director, genre, metascore, description } = movie;
     return(<div className="col">
         <div className="modal-dialog">
             <div className="modal-content">
+                {/* //form is here */}
                 <form onSubmit={handleSubmit}>
                     <div className="modal-header">						
                         <h4 className="modal-title">Add Movie</h4>
@@ -67,4 +73,11 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default AddMovieForm;
+//! still have to mapStateToProps
+const mapStateToProps = (state) =>{
+    return{
+        movies: state.movieState.movies
+    }
+}
+
+export default connect(mapStateToProps, )(AddMovieForm);
